@@ -1,11 +1,12 @@
 import React from "react"
 import '../../Styles/_patient-form.css'
+import PatientService from '../../Services/patient'
 
 class PatientForm extends React.Component {
 
     state = {
-        name: "",
-        age: ""
+        patientName: "",
+        patientAge: ""
     }
 
     handleChange = (e) => {
@@ -16,8 +17,19 @@ class PatientForm extends React.Component {
         })
     }
 
+    // On form submit, prevent default to stop page from refreshing
+    // Add new patient to the database using the patient service
+    // Do a dispatch to add the new patient to the patient array in the reducer
     handleSubmit = (e) => {
-        
+        e.preventDefault()
+        PatientService.createPatient(this.state.patientName, this.state.patientAge)
+        let newPatient = {"name": this.state.patientName, "age": this.state.patientAge}
+
+        // the purpose of dispatch is to update our store (for global state) using the reducer
+        // dispatch takes one parameter called 'action' which is an object with 2 attributes (type, payload)
+        // 'type' determines which case will be triggered in the reducer
+        // 'payload' is the data we are sending in
+        this.props.dispatch({type: 'ADD_PATIENT', payload: newPatient})
     }
 
     render() {
@@ -26,11 +38,11 @@ class PatientForm extends React.Component {
                 New Patient Form
                 <form onSubmit={this.handleSubmit}>
                     <div>
-                        <label for="patientName">
+                        <label htmlFor="patientName">
                             <input onChange={this.handleChange} type="text" name="patientName" placeholder="Patient Name" />
                         </label>
                         <br/>
-                        <label for="patientAge">
+                        <label htmlFor="patientAge">
                             <input onChange={this.handleChange} type="number" name="patientAge" placeholder="Patient Age" />
                         </label>
                     </div>

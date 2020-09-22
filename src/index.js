@@ -3,10 +3,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+//  service worker seems to come standard with react
+import Store from './Store'
+//  why do we call reducer in INdex
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Store>
+      <App />
+    </Store>
   </React.StrictMode>,
   document.getElementById('root')
 );
