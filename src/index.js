@@ -4,14 +4,14 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 //  service worker seems to come standard with react
-import Store from './Store'
+import StoreAction from './Store'
 //  why do we call reducer in INdex
 
 ReactDOM.render(
   <React.StrictMode>
-    <Store>
-      <App />
-    </Store>
+    <StoreAction> {/* Context.provider, passes 'state' and 'dispatch' down to App */ }
+      <App /> {/* App is 'children' of Context.Provider */}
+    </StoreAction>
   </React.StrictMode>,
   document.getElementById('root')
 );

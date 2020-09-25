@@ -4,7 +4,9 @@ import MedicationForm from './MedicationForm'
 import MedicationList from './MedicationList'
 
 const Medication = () => {
-    const [state, dispatch] = useContext(Context)
+    
+    // Set up state and dispatch so that we can pass them down to MedicationForm
+     const [state, dispatch] = useContext(Context)
 
     return (
         <div className="medication-container">

@@ -36,11 +36,12 @@ const PatientList = () => {
 
     return(
         <div className="patient-list-container">
-            <ul className="list" id="PatientList">
+            <ul id="PatientList" className="list-group">
                 {/* Creates an <li> for every patient in state.patientList */}
                 {state.patientList.map((patient, index) => {
                     return(
-                        <li key={index}>
+                        <li key={index} className="list-group-item">
+                            {/* if we were using redux-thunk line 45 would have to call this.props.patientName/Age */}
                             <PatientData patientName={patient.name} patientAge={patient.age} patientId={patient.id} />
                         </li>
                     )

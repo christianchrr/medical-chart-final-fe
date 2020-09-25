@@ -1,4 +1,4 @@
-// Reducer is the component that is responsible for updating store (global state)
+// This is how we update store (global state)
 // When dispatch is called it submits an action to this reducer
 // The reducer then determines what to do with the data that it receives
 const Reducer = (state, action) => {

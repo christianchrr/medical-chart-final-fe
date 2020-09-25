@@ -13,9 +13,7 @@ const MedicationData = (props) => {
 
     return(
         <div>
-            {props.medicationName}, {props.medicationForm}, {props.medicationStrength} | <button onClick={() => removeMedication(props.medicationId)}>Delete</button>
-            <p>____________________</p>
-            <br/>
+            {props.medicationName}, {props.medicationForm}, {props.medicationStrength} | <button className="btn btn-outline-danger" onClick={() => removeMedication(props.medicationId)}>Delete</button>
         </div>
     )
 }

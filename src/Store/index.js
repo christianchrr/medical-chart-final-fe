@@ -6,7 +6,9 @@ const initialState = {
     medicationList: []
 }
 
-const Store = ({ children }) => {
+const StoreAction = ({ children }) => {
+
+    // Initialize 'state' and 'dispatch' so that App can use them to manage state
     const [state, dispatch] = useReducer(Reducer, initialState)
     return (
         //context lets you access store in nested components
@@ -17,4 +19,4 @@ const Store = ({ children }) => {
 }
 
 export const Context = createContext(initialState)
-export default Store
+export default StoreAction

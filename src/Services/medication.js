@@ -1,6 +1,6 @@
 //async ensures that the funciton always returns a promise and wraps non promises in it
 const getMedications = async () => {
-    //try and catch used to try to run and catch will accept error as param if try fails
+    // 'catch' will handle any errors that occur when the code in 'try' runs
     try {
         const url = `http://localhost:3000/medications`
         //await makes JS wait until promise in resolved and returns result
@@ -15,7 +15,7 @@ const getMedications = async () => {
 }
 
 const createMedication = (name, form, strength, patient_id) => {
-    //try and catch used to try to run and catch will accept error as param if try fails
+    // 'catch' will handle any errors that occur when the code in 'try' runs
     try {
         const url = `http://localhost:3000/medications`
         fetch(url,{

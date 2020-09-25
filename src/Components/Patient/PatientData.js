@@ -1,7 +1,6 @@
 import React, {useContext} from 'react'
 import PatientService from '../../Services/patient'
 import { Context } from '../../Store/index'
-import Medication from '../Medication'
 
 const PatientData = (props) => {
 
@@ -14,9 +13,7 @@ const PatientData = (props) => {
 
     return(
         <div>
-            {props.patientName}, {props.patientAge} | <button onClick={() => removePatient(props.patientId)}>Delete</button>
-            <p>____________________</p>
-            <br/>
+            {props.patientName}, {props.patientAge} | <button className="btn btn-outline-danger" onClick={() => removePatient(props.patientId)}>Delete</button>
         </div>
     )
 }

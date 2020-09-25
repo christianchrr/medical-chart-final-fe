@@ -26,7 +26,7 @@ class MedicationForm extends React.Component {
         MedicationService.createMedication(this.state.medicationName, this.state.medicationForm, this.state.medicationStrength)
         let newMedication = {"name": this.state.medicationName, "form": this.state.medicationForm, "strength": this.state.medicationStrength}
 
-        // the purpose of dispatch is to update our store (for global state) using the reducer
+        // the purpose of dispatch is to update context (global state) using the reducer
         // dispatch takes one parameter called 'action' which is an object with 2 attributes (type, payload)
         // 'type' determines which case will be triggered in the reducer
         // 'payload' is the data we are sending in
@@ -52,7 +52,7 @@ class MedicationForm extends React.Component {
                         </label>
                     </div>
                     <div>
-                        <button type="submit">Add</button>
+                        <button type="submit" className="btn btn-outline-primary">Add</button>
                     </div>
                 </form>
             </div>

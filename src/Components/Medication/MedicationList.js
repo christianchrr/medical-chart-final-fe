@@ -36,11 +36,11 @@ const MedicationList = () => {
 
     return(
         <div className="medication-list-container">
-            <ul className="list" id="MedicationList">
+            <ul id="MedicationList" className="list-group">
                 {/* Creates an <li> for every patient in state.medicationList */}
                 {state.medicationList.map((medication, index) => {
                     return(
-                        <li key={index}>
+                        <li key={index} className="list-group-item">
                             <MedicationData medicationName={medication.name} medicationForm={medication.form} medicationStrength={medication.strength} medicationId={medication.id} />
                         </li>
                     )
